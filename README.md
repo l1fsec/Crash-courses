@@ -2,5 +2,5 @@
 
 ## Introduction
 
-> JS Crash course, pro shrnutí základních javascriptových prakti
+> JS Crash course, pro shrnutí základních javascriptových praktik.
 
