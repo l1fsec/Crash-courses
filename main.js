@@ -292,6 +292,7 @@ console.log(addNums(5, 5));
 
 //Construction function
 
+/*
 function Person(firstName, lastName, dob) {   
   this.firstName = firstName;
   this.lastName = lastName;
@@ -311,6 +312,23 @@ Person.prototype.getBirthYear = function() {
 Person.prototype.getFullName = function() {
   return `${this.firstName} ${this.lastName}`;
 }
+*/
+
+/*
+//Class 
+class Person {
+  constructor(firstName, lastName, dob) { //Tohle je lepsi cesta, krasnejsi cesta, jak napsat kod nad timhle.
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+  }
+  getBirthYear() {
+    return this.dob.getFullYear();
+  }
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
 
 //Instantiate object
 
@@ -319,5 +337,114 @@ const person2 = new Person('Mary', 'Smith', '3-5-1970');
 
 console.log(person1.getBirthYear());
 console.log(person1.getFullName());
+*/
+
+// ---------------------------------------------------------------------------------------------- 
+
+// Prace s DOM
+// Selektovani
+
+/*
+console.log(window);
+
+alert(1)
+*/
+
+//Single element selecting
+
+// console.log(document.getElementById('my-form'));
+
+/*
+const form = document.getElementById('my-form');
+console.log(form);
+*/
+
+/*
+console.log(document.getElementById('my-form'));
+console.log(document.querySelector('h1'));
+*/
+
+//Multiple element
+
+// console.log(document.querySelectorAll('.item')); //Nejlepsi zpusob
+
+// console.log(document.getElementsByClassName('item'));
+
+// console.log(document.getElementsByTagName('li'));
+
+//-----------------------------------
+
+/*
+const items = document.querySelectorAll('.item');
+
+items.forEach((item) => console.log(item));
+*/
+
+//-----------------------------------
+
+// Manipulace s DOM
+
+/*
+const ul = document.querySelector('.items');
+
+// ul.remove();
+// ul.lastElementChild.remove();
+ul.firstElementChild.textContent = 'Hello';
+ul.children[1].innerText = 'Brad';
+ul.lastElementChild.innerHTML = '<h4>Hello!</h4>';
+
+const btn = document.querySelector('.btn');
+btn.style.background = 'red';
+*/
+
+// ---------------------------------------------------------------------------------------------- 
+
+// Events
+
+/*
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('mouseover', (e) => {
+  e.preventDefault();
+  document.querySelector('#my-form').style.background = '#ccc';
+  document.querySelector('body').classList.add('bg-dark');
+  document.querySelector('.items').lastElementChild.innerHTML = '<h1>hello!</h1>';
+});
+*/
+
+// ---------------------------------------------------------------------------------------------- 
+
+// Form script
+
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userList = document.querySelector('#users');
+
+myForm.addEventListener('submit', onSubmit);
+
+function onSubmit(e) {
+  e.preventDefault();
+
+  if(nameInput.value === '' || emailInput.value === '') {
+    // alert('Please enter all fields');
+    msg.classList.add('error');
+    msg.innerHTML = 'Please, enter all fields';
+
+    setTimeout(() => msg.remove(), 3000);
+  } else {
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
+
+    userList.appendChild(li);
+
+    //clear the fields
+    nameInput.value = '';
+    emailInput.value = '';
+  }
+}
+
+
 
 
