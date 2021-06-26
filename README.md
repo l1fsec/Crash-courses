@@ -1,6 +1,6 @@
-# Javascript Crash Course
+# Crash-courses
 
 ## Introduction
 
-> JS Crash course, pro shrnutí základních javascriptových praktik.
+> Repository for Crash-courses and learning materials, that I like to do.
 
