@@ -1,6 +1,6 @@
-# Crash-courses
+# Javascript Crash-course
 
 ## Introduction
 
-> Repository for Crash-courses and learning materials, that I like to do.
+> Repository for Javascript Crash-course and learning materials, that I would like to keep in sync.
 
